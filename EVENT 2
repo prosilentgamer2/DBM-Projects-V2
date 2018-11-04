@@ -1,0 +1,46 @@
+{
+  "name": "Blacklist Check 2",
+  "temp": "",
+  "event-type": "0",
+  "_id": "fgWMk",
+  "actions": [
+    {
+      "server": "1",
+      "varName": "server",
+      "info": "1",
+      "storage": "1",
+      "varName2": "id",
+      "name": "Store Server Info"
+    },
+    {
+      "filename": "./resources/blacklist/${tempVars(\"id\")}.json",
+      "storage": "1",
+      "varName2": "file",
+      "name": "Read File"
+    },
+    {
+      "storage": "1",
+      "varName": "file",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "server": "1",
+      "varName": "server",
+      "name": "Leave Server"
+    },
+    {
+      "channel": "5",
+      "varName": "IGNORE",
+      "message": "This doesnt do anything",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
