@@ -1,0 +1,64 @@
+{
+  "name": "countlb",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "lIoax",
+  "actions": [
+    {
+      "sort": "1",
+      "start": "username",
+      "middle": " | ",
+      "end": "result",
+      "getresults": "10",
+      "dataName": "c_number",
+      "varName2": "lb",
+      "storage": "1",
+      "name": "Store Member Data List"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "c_number",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "score",
+      "name": "Store Member Data"
+    },
+    {
+      "title": "Leaderboard for counting game",
+      "author": "${msg.author.tag}",
+      "color": "#36393F",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${msg.author.avatarURL}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"lb\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Your score",
+      "message": "${tempVars(\"score\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
